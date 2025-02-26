@@ -19,11 +19,10 @@ class Main:
             if not suc:
                 break
 
-            end_time = time.time()
-            frame_number = 1 / (end_time - start_time)  # вычисление FPS по стандартной формуле 1/(конец-начало)
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             faces = face_cascade.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=3)
-
+            end_time = time.time()
+            frame_number = 1 / (end_time - start_time)  # вычисление FPS по стандартной формуле 1/(конец-начало)
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
                 cv2.putText(frame, f"FPS: {frame_number:.2f}", (x, y),
