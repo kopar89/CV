@@ -31,7 +31,7 @@ class Main:
             cv2.imshow('Face Detection', frame)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-        print("FINIS✅")
+        print("FINISH✅")
 
         cap.release()
         cv2.destroyAllWindows()
@@ -118,7 +118,7 @@ def video():
         cv2.imshow('Face Analysis', frame)
         if cv2.waitKey(1) & 0xFF == ord('f'):
             break
-    print("FINIS✅")
+    print("FINISH✅")
 
     cap.release()
     cv2.destroyAllWindows()
